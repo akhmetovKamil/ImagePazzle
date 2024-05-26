@@ -3,11 +3,11 @@ import "./style.css";
 const app = document.querySelector<HTMLDivElement>("#app");
 const btn = document.querySelector<HTMLButtonElement>("#btn")!;
 
-const swapCells = (fElem: HTMLCanvasElement, sElem: HTMLCanvasElement) => {
-  const fNext = fElem.nextElementSibling;
-  sElem.parentNode?.insertBefore(fElem, sElem);
-  fElem.parentNode?.insertBefore(sElem, fNext);
-};
+// const swapCells = (fElem: HTMLCanvasElement, sElem: HTMLCanvasElement) => {
+//   const fNext = fElem.nextElementSibling;
+//   sElem.parentNode?.insertBefore(fElem, sElem);
+//   fElem.parentNode?.insertBefore(sElem, fNext);
+// };
 
 const swapCellsWithAnimation = (
   fElem: HTMLCanvasElement,
@@ -75,7 +75,7 @@ const yL = 13;
 const wh = 50;
 
 let isOneSelected: boolean = false;
-let selectedCell: HTMLCanvasElement = null;
+let selectedCell: HTMLCanvasElement;
 
 const arr: Array<Array<HTMLCanvasElement>> = [];
 
@@ -127,7 +127,7 @@ imageObj.onload = () => {
       canvas.style.width = `${wh}px`;
       canvas.style.height = `${wh}px`;
 
-      app.appendChild(canvas);
+      app!.appendChild(canvas);
     }
   }
 };
